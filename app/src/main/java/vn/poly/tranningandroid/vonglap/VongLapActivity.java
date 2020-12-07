@@ -40,35 +40,6 @@ public class VongLapActivity extends AppCompatActivity {
 
         final ArrayAdapter adapter = new ArrayAdapter(VongLapActivity.this,android.R.layout.simple_list_item_1,list);
         ListView.setAdapter(adapter);
-        //clcik item
-        ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(VongLapActivity.this,list.get(position),Toast.LENGTH_LONG).show();
-                Log.e("click",list+ "");
-            }
-        });
-
-        ListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(VongLapActivity.this,"xoa thanh cong" + position,Toast.LENGTH_LONG).show();
-                list.remove(position);
-                adapter.notifyDataSetChanged();
-                return false;
-            }
-        });
-
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String item = edtNhap.getText().toString();
-                list.add(item);
-                adapter.notifyDataSetChanged();
-            }
-        });
 
     }
     }

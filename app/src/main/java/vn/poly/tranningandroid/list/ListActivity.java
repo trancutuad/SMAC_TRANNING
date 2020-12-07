@@ -41,6 +41,36 @@ public class ListActivity extends AppCompatActivity {
 
         final ArrayAdapter adapter = new ArrayAdapter(ListActivity.this,android.R.layout.simple_list_item_1,list);
         ListView.setAdapter(adapter);
+        //clcik item
+        ListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(ListActivity.this,list.get(position),Toast.LENGTH_LONG).show();
+                Log.e("click",list+ "");
+            }
+        });
+
+        ListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ListActivity.this,"xoa thanh cong" + position,Toast.LENGTH_LONG).show();
+                list.remove(position);
+                adapter.notifyDataSetChanged();
+                return false;
+            }
+        });
+
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String item = edtNhap.getText().toString();
+                list.add(item);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
         }
 
     }
