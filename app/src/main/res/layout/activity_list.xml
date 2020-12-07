@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".list.ListActivity">
+
+    <Button
+        android:text="add"
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+    <EditText
+        android:id="@+id/edt_Nhap"
+        android:hint="nhap"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+    <ListView
+        android:id="@+id/ListView"
+        android:layout_width="match_parent"
+        android:layout_height="630dp"></ListView>
+
+</LinearLayout>
